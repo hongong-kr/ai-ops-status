@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap" rel="stylesheet">
 <title>AI 운용 현황 — 공개 동기화본</title>
 <style>
   *{box-sizing:border-box;}
   html,body{overflow-x:clip; -webkit-text-size-adjust:100%; text-size-adjust:100%;}
   body{
-    margin:0; background:#ffffff; color:#2b2b2b;
+    margin:0; background:#f6f1e7; color:#2b2b2b;
     font-family:-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Segoe UI",sans-serif;
     font-size:16px; line-height:1.75; -webkit-font-smoothing:antialiased;
   }
@@ -17,86 +18,107 @@
 
   /* ---------- top bar ---------- */
   .topbar{
-    position:sticky; top:0; z-index:10; background:#ffffff;
-    border-bottom:1px solid #e2e2e2;
+    position:sticky; top:0; z-index:10; background:#f6f1e7;
+    border-bottom:1px solid #e3ddd0;
   }
   .topbar-inner{
     max-width:860px; margin:0 auto; padding:12px 20px;
     display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
   }
   .brand{font-size:16px; font-weight:700;}
-  .brand .ver{font-size:12.5px; font-weight:400; color:#888; margin-left:8px;}
+  .brand .ver{font-size:12.5px; font-weight:400; color:#8a8378; margin-left:8px;}
   .view-switch{display:flex; gap:8px; flex-wrap:wrap;}
   .btn{
-    border:1px solid #2b2b2b; background:#ffffff; color:#2b2b2b;
+    border:1px solid #4a4238; background:#f6f1e7; color:#4a4238;
     border-radius:6px; padding:8px 16px; font:inherit; font-size:14px; cursor:pointer;
   }
-  .btn.primary{background:#2b2b2b; color:#ffffff;}
+  .btn.primary{background:#4a4238; color:#ffffff;}
   .btn.big{font-size:15px; padding:11px 22px;}
 
   /* ---------- page frame ---------- */
   .wrap{max-width:860px; margin:0 auto; padding:0 20px;}
-  .page-head{padding:48px 0 28px; border-bottom:2px solid #2b2b2b;}
-  .page-head h1{font-size:30px; line-height:1.35; margin:0 0 8px;}
-  .page-head .sub{font-size:18px; color:#555; margin:0 0 14px;}
+  .page-head{padding:48px 0 28px; border-bottom:1px solid #d5cebd;}
+  .page-head h1{font-size:34px; line-height:1.35; margin:0 0 8px;}
+  .page-head .sub{font-size:18px; color:#5c554c; margin:0 0 14px;}
   .page-head .lead{font-size:16px; line-height:1.75; color:#2b2b2b; margin:0 0 18px;}
-  .page-head .meta{font-size:13.5px; color:#888; margin:0 0 18px;}
+  .page-head .meta{font-size:13.5px; color:#8a8378; margin:0 0 18px;}
   .chap-nav{display:flex; flex-wrap:wrap; gap:8px; margin-top:4px;}
   .chap-nav a{
-    color:#2b2b2b; text-decoration:none; border:1px solid #ddd; border-radius:999px;
+    color:#4a4238; text-decoration:none; border:1px solid #ddd8c9; border-radius:999px;
     padding:4px 12px; font-size:13.5px;
   }
   .note{
-    background:#f6f6f4; border:1px solid #e2e2e2; border-radius:8px;
-    padding:14px 18px; font-size:14.5px; color:#555; margin:20px 0 0;
+    background:#ffffff; border:1px solid #e3ddd0; border-radius:8px;
+    padding:14px 18px; font-size:14.5px; color:#5c554c; margin:20px 0 0;
   }
 
   /* ---------- sections ---------- */
-  section.chapter, section.block{padding:32px 0; border-bottom:1px solid #e2e2e2; scroll-margin-top:70px;}
-  .chap-no, .kicker{font-size:12px; letter-spacing:.12em; color:#888; font-weight:700; margin-bottom:6px;}
-  h2.chap-title{font-size:22px; line-height:1.4; margin:0 0 18px;}
-  section.block h2{font-size:22px; line-height:1.4; margin:0 0 14px;}
+  section.chapter, section.block{padding:32px 0; border-bottom:1px solid #e3ddd0; scroll-margin-top:70px;}
+  /* 가이드 절 카드: 흰 바탕 + 얇은 테두리 + 라운딩 */
+  #guideView .page-head{border-bottom:none;}
+  #guideView section.block{
+    background:#ffffff; border:1px solid #e3ddd0; border-radius:12px;
+    padding:28px 28px; margin:0 0 20px;
+  }
+  /* 가이드 절 안 문단 구분: 옅은 줄 */
+  #guideView section.block > p:not(:last-child),
+  #guideView section.block > ul:not(:last-child),
+  #guideView section.block > ol:not(:last-child){
+    border-bottom:1px solid #ece7db; padding-bottom:12px; margin-bottom:16px;
+  }
+  .chap-no, .kicker{font-size:12px; letter-spacing:.12em; color:#8a8378; font-weight:700; margin-bottom:6px;}
+  h2.chap-title{font-size:24px; line-height:1.4; margin:0 0 18px;}
+  section.block h2{font-size:24px; line-height:1.4; margin:0 0 14px;}
   section.block h3{font-size:17px; margin:24px 0 8px;}
+  .page-head h1, h2.chap-title, section.block h2, section.block h3{font-family:"Noto Serif KR",serif;}
   p{margin:0 0 12px;}
   ul, ol{margin:0 0 14px; padding-left:20px;}
   li{margin-bottom:8px;}
+  li::marker{color:#8a8378;}
   strong{font-weight:700;}
-  .none{color:#888;}
+  .none{color:#8a8378;}
 
   /* ---------- tables (stay as tables; swipe inside the wrap) ---------- */
-  .table-wrap{border:1px solid #ddd; border-radius:8px; margin:16px 0; overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch;}
+  .table-wrap{border:1px solid #ddd8c9; border-radius:12px; margin:16px 0; overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch;}
   table{border-collapse:collapse; width:100%; table-layout:fixed; font-size:14px; line-height:1.6;}
   table col.c-label{width:15%;}
   table col.c-ai{width:21.25%;}
   thead th{
-    background:#f6f6f4; text-align:left; padding:10px 12px; font-weight:700;
-    border-bottom:1px solid #e2e2e2; overflow-wrap:anywhere; word-break:break-word;
+    background:#ece1c6; color:#4a4238; text-align:left; padding:10px 12px; font-weight:700;
+    border-bottom:1px solid #e3ddd0; overflow-wrap:anywhere; word-break:break-word;
   }
   tbody th{
-    background:#fafaf8; text-align:left; padding:10px 12px; font-weight:700;
-    border-bottom:1px solid #e2e2e2; vertical-align:top; overflow-wrap:anywhere; word-break:break-word;
+    background:#f6f1e7; color:#4a4238; text-align:left; padding:10px 12px; font-weight:700;
+    border-bottom:1px solid #e3ddd0; vertical-align:top; overflow-wrap:anywhere; word-break:break-word;
   }
   tbody td{
-    padding:10px 12px; border-bottom:1px solid #eeeeee; vertical-align:top;
+    background:#ffffff; padding:10px 12px; border-bottom:1px solid #ece7db; vertical-align:top;
     overflow-wrap:anywhere; word-break:break-word;
   }
   tbody tr:last-child th, tbody tr:last-child td{border-bottom:none;}
+  /* 머리 행 전체 + 첫 열: 가운데 정렬 */
+  thead th, tbody th:first-child{text-align:center;}
   ul.plain{margin:0 0 0; padding-left:18px;}
   ul.plain li{margin-bottom:8px;}
   ul.plain li:last-child{margin-bottom:0;}
   tbody td ul.plain{margin-bottom:0;}
 
-  footer{padding:28px 0 48px; font-size:12.5px; color:#888; line-height:1.7;}
+  footer{padding:28px 0 48px; font-size:12.5px; color:#8a8378; line-height:1.7;}
 
   @media (max-width:900px){
     .wrap{padding:0 16px;}
     .topbar-inner{padding:10px 16px;}
     .page-head{padding-top:28px;}
-    .page-head h1{font-size:26px;}
+    .page-head h1{font-size:28px;}
     section.chapter, section.block{padding:26px 0;}
-    h2.chap-title, section.block h2{font-size:20px;}
+    #guideView section.block{padding:22px 18px;}
+    h2.chap-title, section.block h2{font-size:22px;}
     table{table-layout:auto; font-size:13.5px; min-width:660px;}
     thead th, tbody th, tbody td{padding:9px 10px;}
+    /* 모바일 옆으로 밀 때 첫 열 고정 */
+    thead th:first-child, tbody th:first-child{position:sticky; left:0; border-right:1px solid #e3ddd0;}
+    thead th:first-child{z-index:2;}
+    tbody th:first-child{z-index:1;}
   }
 </style>
 </head>
