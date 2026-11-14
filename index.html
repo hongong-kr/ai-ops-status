@@ -131,7 +131,7 @@
 
 <header class="topbar">
   <div class="topbar-inner">
-    <div class="brand">AI 운용 현황<span class="ver">공개 동기화본 · 버전 2026-11-14-1</span></div>
+    <div class="brand">AI 운용 현황<span class="ver">공개 동기화본 · 버전 2026-11-14-2</span></div>
     <nav class="view-switch" aria-label="화면 전환">
       <button class="btn primary" id="btnStatus" type="button" aria-pressed="true">현황 보기</button>
       <button class="btn" id="btnGuide" type="button" aria-pressed="false">가이드 보기</button>
@@ -146,7 +146,7 @@
       <h1>AI 운용 현황</h1>
       <p class="sub">공개 동기화본</p>
       <p class="lead">이 문서는 함께 운용되는 AI들이 각자의 지침과 대조하기 위한 공개본으로, 계정 식별자와 보안 정보는 제외했다. 지침이 바뀌면 담당 AI가 먼저 보고하고, 반영이 끝나면 이 문서가 확정본이 된다.</p>
-      <p class="meta">기준일 2026-11-14 · 버전 2026-11-14-1 · 구성 · 접근권한 · 서비스별 특징 · 운용 AI 4개 병행</p>
+      <p class="meta">기준일 2026-11-14 · 버전 2026-11-14-2 · 구성 · 접근권한 · 서비스별 특징 · 운용 AI 4개 병행</p>
       <nav class="chap-nav" aria-label="장 바로가기">
         <a href="#ch1">제 1 장 구성</a>
         <a href="#ch2">제 2 장 접근권한</a>
@@ -165,7 +165,7 @@
         <table>
           <colgroup><col class="c-label"><col class="c-ai"><col class="c-ai"><col class="c-ai"><col class="c-ai"><col class="c-ai"></colgroup>
           <thead>
-            <tr><th scope="col">구분</th><th scope="col">Muse(Amy)</th><th scope="col">Pickle(농그니)</th><th scope="col">Pickle(에이미)</th><th scope="col">Instinct(잉트)</th><th scope="col">CUE(큐)</th></tr>
+            <tr><th scope="col">구분</th><th scope="col">Muse(Amy)</th><th scope="col">Pickle(농그니)</th><th scope="col">Pickle(에이미)</th><th scope="col">Instinct(잉트)</th><th scope="col">Cue</th></tr>
           </thead>
           <tbody>
             <tr>
@@ -173,14 +173,14 @@
               <td data-col="Muse(Amy)">iPhone(앱)<br>iPad(앱)<br>PC(크롬)<br>AOS(WhatsApp)</td>
               <td data-col="Pickle(농그니)">iPad(앱)</td>
               <td data-col="Pickle(에이미)">iPhone(앱)</td>
-              <td data-col="Instinct">iPhone(iMessage)<br>AOS(WhatsApp)</td><td data-col="CUE">Slack</td>
+              <td data-col="Instinct">iPhone(iMessage)<br>AOS(WhatsApp)</td><td data-col="CUE">iPhone(앱)<br>AOS(WhatsApp)</td>
             </tr>
             <tr>
               <th scope="row">전담 영역</th>
               <td data-col="Muse(Amy)">기초설계·총괄</td>
               <td data-col="Pickle(농그니)">업무실행·알림</td>
               <td data-col="Pickle(에이미)">개인생활·여가</td>
-              <td data-col="Instinct">전문자문<br>학교 알림장 운영</td><td data-col="CUE">채용 수습기간<br>역할 미정</td>
+              <td data-col="Instinct">전문자문<br>학교 알림장 운영</td><td data-col="CUE">채용수습기간<br>(업무 실행 보조)</td>
             </tr>
             <tr>
               <th scope="row">정기 루틴</th>
@@ -191,7 +191,7 @@
             </tr>
             <tr>
               <th scope="row">공통 루틴</th>
-              <td colspan="5" data-col="공통 루틴"><ul class="plain"><li>개인정보 점검 — 네 AI가 각자 자기 메모리와 워크스페이스를 대상으로 개인정보 저장 여부를 점검하고, 통일된 제목과 3항목 양식(점검 범위·발견 항목·처리 방침)으로 보고한다. 요일 분산은 유지한다(농그니 매주 월 09:00, Muse(Amy) 매주 화 10:40, 에이미 매주 수 07:30(웹 확인 때 함께), Instinct 매주 목 09:00 전후(웹 확인 때 함께)). 발견 항목이 없어도 보고한다.</li><li>AI 운용현황 웹 변경 탐지·보고 — 그날 첫 발견자 1명만 보고하고, 이미 보고된 변경이면 나중 탐지자는 보고 없이 보관본만 갱신한다. 탐지 시각은 각 AI의 기존 루틴을 유지한다. 적용 첫 주 잠정 규칙으로, 다른 AI의 보고 여부를 확인할 수 없으면 보고하고, 확인 불가로 생긴 중복은 위반이 아니다. Muse(Amy)는 매일 09:10 보고를 모아 수신 확인을 남기고, 실제 이력과 어긋나면 경고한다. 변경이 없는 날은 따로 알리지 않는다.</li><li>운용 변경 보고 — AI의 운용 방식이 바뀌면 담당 AI가 고정 6항목 양식(변경 일시·항목·변경 전·변경 후·사유 및 지시 출처·반영 필요 여부)으로, 제목에 일시를 넣어 보고하고, 발송 전 건수와 나열 개수를 자가검증한다. 불일치 보고는 본문 첫 줄에 유형 태그(A~D)를 달고, Muse(Amy)가 판정해 정본 변경 로그에 기록하고, pending-edits 등록·승인 후 수정하며, 확인 회신은 보고한 AI에게만 보낸다.</li><li>침묵 규칙 — 확인 회신은 판정·불일치·긴급·수정 완료 시에만 보내고, 그 외에는 보내지 않는다.</li><li>Slack 단독 소통 — 변경보고·웹변경보고는 슬랙 #권홍근의-ai-운용-로그에 단독 게시한다(이메일 병행 종료). 개인정보점검은 이메일로만 보고한다. 각 AI의 운용 변경보고는 다른 AI가 먼저 올렸어도 생략 없이 따로 올리고, 중복 방지는 웹 변경 탐지 같은 동일 사실 발견에만 적용한다. 후속·정정은 원글 스레드 답글로 한다. 질의·지시·확인 요청에는 평일 07:00~19:00에 1시간마다 채널을 확인해 스레드 답글로 응답한다.</li><li>CUE(큐) — 채용 수습기간. 점검 요일·탐지 시각은 미정이며, 단장이 정하면 그때부터 공통 루틴에 참여한다.</li></ul></td>
+              <td colspan="5" data-col="공통 루틴"><ul class="plain"><li>개인정보 점검 — 네 AI가 각자 자기 메모리와 워크스페이스를 대상으로 개인정보 저장 여부를 점검하고, 통일된 제목과 3항목 양식(점검 범위·발견 항목·처리 방침)으로 보고한다. 요일 분산은 유지한다(농그니 매주 월 09:00, Muse(Amy) 매주 화 10:40, 에이미 매주 수 07:30(웹 확인 때 함께), Instinct 매주 목 09:00 전후(웹 확인 때 함께)). 발견 항목이 없어도 보고한다.</li><li>AI 운용현황 웹 변경 탐지·보고 — 그날 첫 발견자 1명만 보고하고, 이미 보고된 변경이면 나중 탐지자는 보고 없이 보관본만 갱신한다. 탐지 시각은 각 AI의 기존 루틴을 유지한다. 적용 첫 주 잠정 규칙으로, 다른 AI의 보고 여부를 확인할 수 없으면 보고하고, 확인 불가로 생긴 중복은 위반이 아니다. Muse(Amy)는 매일 09:10 보고를 모아 수신 확인을 남기고, 실제 이력과 어긋나면 경고한다. 변경이 없는 날은 따로 알리지 않는다.</li><li>운용 변경 보고 — AI의 운용 방식이 바뀌면 담당 AI가 고정 6항목 양식(변경 일시·항목·변경 전·변경 후·사유 및 지시 출처·반영 필요 여부)으로, 제목에 일시를 넣어 보고하고, 발송 전 건수와 나열 개수를 자가검증한다. 불일치 보고는 본문 첫 줄에 유형 태그(A~D)를 달고, Muse(Amy)가 판정해 정본 변경 로그에 기록하고, pending-edits 등록·승인 후 수정하며, 확인 회신은 보고한 AI에게만 보낸다.</li><li>침묵 규칙 — 확인 회신은 판정·불일치·긴급·수정 완료 시에만 보내고, 그 외에는 보내지 않는다.</li><li>Slack 단독 소통 — 변경보고·웹변경보고는 슬랙 #권홍근의-ai-운용-로그에 단독 게시한다(이메일 병행 종료). 개인정보점검은 이메일로만 보고한다. 각 AI의 운용 변경보고는 다른 AI가 먼저 올렸어도 생략 없이 따로 올리고, 중복 방지는 웹 변경 탐지 같은 동일 사실 발견에만 적용한다. 후속·정정은 원글 스레드 답글로 한다. 질의·지시·확인 요청에는 평일 07:00~19:00에 1시간마다 채널을 확인해 스레드 답글로 응답한다.</li><li>Cue — 채용수습기간 (업무 실행 보조). 점검 요일·탐지 시각은 미정이며, 단장이 정하면 그때부터 공통 루틴에 참여한다.</li></ul></td>
             </tr>
           </tbody>
         </table>
@@ -207,7 +207,7 @@
         <table>
           <colgroup><col class="c-label"><col class="c-ai"><col class="c-ai"><col class="c-ai"><col class="c-ai"><col class="c-ai"></colgroup>
           <thead>
-            <tr><th scope="col">접근 항목</th><th scope="col">Muse(Amy)</th><th scope="col">Pickle(농그니)</th><th scope="col">Pickle(에이미)</th><th scope="col">Instinct(잉트)</th><th scope="col">CUE(큐)</th></tr>
+            <tr><th scope="col">접근 항목</th><th scope="col">Muse(Amy)</th><th scope="col">Pickle(농그니)</th><th scope="col">Pickle(에이미)</th><th scope="col">Instinct(잉트)</th><th scope="col">Cue</th></tr>
           </thead>
           <tbody>
             <tr>
@@ -236,7 +236,7 @@
               <td data-col="Muse(Amy)">사용불가</td>
               <td data-col="Pickle(농그니)">감시·자동답장</td>
               <td data-col="Pickle(에이미)"><span class="none">없음</span></td>
-              <td data-col="Instinct"><span class="none">없음</span></td><td data-col="CUE"><span class="none">없음</span></td>
+              <td data-col="Instinct"><span class="none">없음</span></td><td data-col="CUE">메일 읽기·발송</td>
             </tr>
             <tr>
               <th scope="row">코드 저장소</th>
@@ -280,7 +280,7 @@
         <table>
           <colgroup><col class="c-label"><col class="c-ai"><col class="c-ai"><col class="c-ai"><col class="c-ai"><col class="c-ai"></colgroup>
           <thead>
-            <tr><th scope="col">구분</th><th scope="col">Muse(Amy)</th><th scope="col">Pickle(농그니)</th><th scope="col">Pickle(에이미)</th><th scope="col">Instinct(잉트)</th><th scope="col">CUE(큐)</th></tr>
+            <tr><th scope="col">구분</th><th scope="col">Muse(Amy)</th><th scope="col">Pickle(농그니)</th><th scope="col">Pickle(에이미)</th><th scope="col">Instinct(잉트)</th><th scope="col">Cue</th></tr>
           </thead>
           <tbody>
             <tr>
@@ -316,7 +316,7 @@
       </div>
     </section>
 
-    <footer>AI 운용 현황 · 공개 동기화본 · 기준일 2026-11-14 · 버전 2026-11-14-1</footer>
+    <footer>AI 운용 현황 · 공개 동기화본 · 기준일 2026-11-14 · 버전 2026-11-14-2</footer>
   </div>
 </div>
 
@@ -327,7 +327,7 @@
       <h1>여러 AI에이전트 운영 가이드</h1>
       <p class="sub">네 개의 AI를 하나의 운용 체계로</p>
       <p class="lead">여러 개의 AI 에이전트를 함께 쓸 때, 각자 따로 돌리면 같은 변경을 세 번 보고하고 서로 다른 기준을 쓰게 된다. 이 가이드는 네 개의 AI를 하나의 운용 체계로 묶어 둔 현재 방식을 정리한 것이다. 세부 기준은 공개본 제 1 장 공통 루틴과 같고, 처음 보는 사람도 따라갈 수 있게 풀어 썼다.</p>
-      <p class="meta">기준 2026-10-28 개정안 · 버전 2026-11-14-1</p>
+      <p class="meta">기준 2026-10-28 개정안 · 버전 2026-11-14-2</p>
       <nav class="chap-nav" aria-label="가이드 목차">
         <a href="#g1">구성</a>
         <a href="#g2">기록의 종류</a>
@@ -447,7 +447,7 @@
     </section>
 
 
-    <footer>여러 AI에이전트 운영 가이드 · AI 운용 현황 공개 동기화본과 함께 제공 · 버전 2026-11-14-1</footer>
+    <footer>여러 AI에이전트 운영 가이드 · AI 운용 현황 공개 동기화본과 함께 제공 · 버전 2026-11-14-2</footer>
   </div>
 </div>
 
